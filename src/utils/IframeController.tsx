@@ -100,7 +100,7 @@ export class IframeController {
 
   goToLocation(hash: string): [(() => void) | null, string | null] {
     const loc = deserializeLocation(hash);
-    if (!loc) {
+    if (!loc || !loc.selection) {
       return [null, null];
     }
 
